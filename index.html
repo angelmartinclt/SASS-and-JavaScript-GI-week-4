@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Budget Tracker</title>
+
+    <!--icon link for website-->
+    <link rel="icon" type="image/png" href="./icon.png">
+    
+    <!-- permenant marker link-->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+   
+    <!-- link for zain font-->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zain&display=swap" rel="stylesheet">
+
+    <!-- icon link for footer-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+</head>
+<body>
+    <section class="container">
+
+        <div class="hero">
+            <h1> Budget , for the new you! </h1>
+        </div>
+        
+
+        <div class="input-section">
+            <div class="add-input">
+                <h2>Add your income</h2>
+                <input type="text" id="incomeDescription" placeholder="Description here">
+                <input type="number" id="incomeAmount" placeholder="Amount here" step="0.01">
+                <button class="income-button">Add income</button>
+                <p id="incomeError" class="error-message"></p>
+            </div>
+
+            <div class="add-input">
+                <h2>Add your expenses</h2>
+                <input type="text" id="expenseDescription" placeholder="Description here">
+                <input type="number" id="expenseAmount" placeholder="Amount here" step="0.01">
+                <button class="expense-button">Add expense</button>
+                <p id="expenseError" class="error-message"></p>
+            </div>
+        </div>
+
+        <div class="transactions">
+            <div class="list">
+                <h2>Income History</h2>
+                <div id="incomeList" class="empty">No income yet</div>
+            </div>
+            <div class="list">
+                <h2>Expense History</h2>
+                <div id="expenseList" class="empty">No expenses yet</div>
+            </div>
+        </div>
+
+        <div class="summary-cards">
+            <div class="income-card">
+                <h3>Total Income</h3>
+                <p id="totalIncome">$ 0.00</p>
+            </div>
+            <div class="expense-card">
+                <h3>Total Expenses</h3>
+                <p id="totalExpenses">$ 0.00</p>
+            </div>
+            <div class="balance-card">
+                <h3>Balance Remaining</h3>
+                <p id="balance">$ 0.00</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer class="footer">
+        <p>A budget is telling your money where to go instead of wondering where it went.</p>
+        <a href="https://github.com/angelmartinclt" aria-label="GitHub" target="blank"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com/in/angel-martinclt" aria-label="LinkedIn" target="blank"><i class="fa-brands fa-linkedin"></i></a>
+    </footer>
+
+    <script src="./index.js"></script>
+</body>
+</html>

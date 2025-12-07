@@ -1,0 +1,303 @@
+$primary-color: #bbafa3;
+$dark-brown: #63504e;
+$border-radius: 22px;
+$spacing: 20px;
+$bp-medium: 900px;
+$bp-small:550px;
+
+
+@keyframes fade-up{
+    from{
+        opacity: 0;
+        transform: translateY(12px);
+    } to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+@mixin card-style{
+    background-color: $primary-color;
+    border-radius: $border-radius;
+    padding: $spacing;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: translateY(-2px);
+    }
+}
+
+@mixin gradient($from, $to, $direction : to bottom){
+    background-image: linear-gradient($direction, $from, $to), url("../wallpaper.jpg");
+}
+
+@mixin animations ($name, $duration, $easing, $from-transform, $to-transform){
+    @keyframes #{$name}{
+        from {
+            opacity: 0;
+            transform: $from-transform;
+        } to {
+            opacity: 1;
+            transform: $to-transform;
+        }
+    }
+    animation: #{$name} $duration #{$easing} both;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+
+body{
+    @include gradient(#dbe4ee,#a9bcd0);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: $spacing;
+    font-family: "Zain", sans-serif;
+    
+}
+
+.container{
+    max-width: 1000px;
+    width: 100%;
+    
+
+    .hero{
+        background-image: url("../hero.jpg");
+        background-size: cover;
+        background-position: center;
+        border-radius: $border-radius;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: $spacing;
+        padding: 5rem;
+        @include animations(fade-hero,0.7s ,ease-out , translateY(-20px), translateY(0));
+        animation-delay: 0s;
+    }
+  
+        h1{
+            
+            font-size: 55px;
+            margin-bottom: 25px;
+            text-align: center;
+            text-transform: uppercase;
+            font-family: "Permanent Marker", cursive;
+            color: #a9bcd0;
+            
+        }
+}
+//input section- 1st
+.input-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing;
+    background-color: $dark-brown;
+    border-radius: $border-radius;
+    padding: $spacing;
+    margin-bottom: 25px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    @include animations(fade-hero,0.7s ,ease-out , translateY(-20px), translateY(0));
+    animation-delay: 0.15s;
+    
+    .add-input{
+        h2{
+            color: $primary-color;
+            margin-bottom: 15px;
+        }
+
+        input{
+            width: 100%;
+            border: 2px solid $primary-color;
+            border-radius: 8px;
+            font-size: 18px;
+            margin-bottom: 25px;
+            padding: 2px;
+        
+            &:focus{
+            border-color: $dark-brown;
+            outline: none;
+            }
+        }
+
+        button{
+            background-color: #a9bcd0;
+            cursor: pointer;
+            width: 50%;
+            border-radius: 8px;
+            border: none;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            
+        
+            &:hover{
+                transform: translateY(-2px);
+            }
+        }
+        .error-message{
+            color: red;
+            font-size: 15px;
+            margin-top: 3px;
+            min-height: 1rem;
+        }
+    }
+}
+// transactions section -2nd
+.transactions{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing;
+    margin-bottom: 25px;
+    background-color: #bbafa3;
+    border-radius: $border-radius;
+    padding: $spacing;
+    margin-bottom: 25px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    @include animations(fade-hero,0.7s ,ease-out , translateY(-20px), translateY(0));
+    animation-delay: 0.3s;
+
+    .list{
+        @include card-style();
+    }
+
+        h2{
+            color: $dark-brown;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .delete-button{
+         background-color: $dark-brown;
+         cursor: pointer;
+            width: 30%;
+            border-radius: 8px;
+            border: 3px solid $dark-brown;
+            font-size: 18px;
+            color: $primary-color;
+
+        }
+
+
+        .transaction-item{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 18px;
+
+            &:hover{
+                transform: translateY(-2px);
+                }
+        }
+}
+
+//summary section- 3rd
+.summary-cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing;
+    text-align: center;
+    background-color: $dark-brown;
+    border-radius: 8px;
+    padding: $spacing;
+    margin-bottom: 25px;
+    @include animations(scale-summary, 0.7s, ease-out, scale(0.95), scale(1));
+    animation-delay:0.45s;
+    
+
+    .income-card, .expense-card, .balance-card{
+       
+
+
+        h3{
+            color: $primary-color;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        p{
+            font-size: 20px;
+            font-weight: bold;
+        }
+    }
+}
+
+//footer
+
+.footer{
+    text-align: center;
+    font-size: 24px;
+    background-image: url("../money.jpg");
+    padding: 5rem;
+    border-radius: 18px;
+    font-family: "Bungee Tint", sans-serif;
+    color: #a9bcd0;
+    font-weight: bold;
+    text-shadow: 
+    -1px -1px 0 black,
+    1px -1px 0 black, 
+    -1px 1px 0 black,
+    1px 1px 0 black;
+
+    a{
+        text-decoration: none;
+        color: #a9bcd0;
+        font-size: 35px;
+
+        &:visited{
+            color: #a9bcd0;
+        }
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+
+@media (max-width: $bp-medium){
+    body{
+        padding: 10px;
+    }
+
+    .transactions{
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: $bp-small){
+    body{
+        align-items: stretch;
+    }
+
+    .transaction-item{
+        flex-direction: column;
+    }
+
+    .summary-cards{
+        grid-template-columns: 1fr;
+    }
+
+    .footer{
+        font-size: 20px;
+    }
+}
