@@ -3,4 +3,4 @@
 
 Through this application users can insert their income and expenses, which will then reflect the remaining balance allotted. Users can view income and expense history through a list and have updated calculations to accurately manage their finances. For incorrect expenses or updated income there is a convenient  delete button next to list items. 
 
-Hosted on AWS Amplify: 
+Hosted on AWS Amplify: https://master.d28hae0nbjwp0c.amplifyapp.com/

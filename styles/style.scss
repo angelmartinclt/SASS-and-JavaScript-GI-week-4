@@ -30,7 +30,7 @@ $bp-small:550px;
 }
 
 @mixin gradient($from, $to, $direction : to bottom){
-    background-image: linear-gradient($direction, $from, $to), url("../wallpaper.jpg");
+    background-image: linear-gradient($direction, $from, $to);
 }
 
 @mixin animations ($name, $duration, $easing, $from-transform, $to-transform){
