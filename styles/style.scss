@@ -33,18 +33,7 @@ $bp-small:550px;
     background-image: linear-gradient($direction, $from, $to);
 }
 
-@mixin animations ($name, $duration, $easing, $from-transform, $to-transform){
-    @keyframes #{$name}{
-        from {
-            opacity: 0;
-            transform: $from-transform;
-        } to {
-            opacity: 1;
-            transform: $to-transform;
-        }
-    }
-    animation: #{$name} $duration #{$easing} both;
-}
+
 
 
 *{
@@ -86,7 +75,7 @@ body{
         justify-content: center;
         margin-bottom: $spacing;
         padding: 5rem;
-        @include animations(fade-hero,0.7s ,ease-out , translateY(-20px), translateY(0));
+        animation: fade-up 0.6s ease-out both;
         animation-delay: 0s;
     }
   
@@ -113,8 +102,8 @@ body{
     justify-content: center;
     align-items: center;
     text-align: center;
-    @include animations(fade-hero,0.7s ,ease-out , translateY(-20px), translateY(0));
-    animation-delay: 0.15s;
+    animation: fade-up 0.6s ease-out both;
+        animation-delay: 0.15s;
     
     .add-input{
         h2{
@@ -171,8 +160,8 @@ body{
     justify-content: center;
     align-items: center;
     text-align: center;
-    @include animations(fade-hero,0.7s ,ease-out , translateY(-20px), translateY(0));
-    animation-delay: 0.3s;
+    animation: fade-up 0.6s ease-out both;
+        animation-delay: 0.3s;
 
     .list{
         @include card-style();
@@ -219,8 +208,8 @@ body{
     border-radius: 8px;
     padding: $spacing;
     margin-bottom: 25px;
-    @include animations(scale-summary, 0.7s, ease-out, scale(0.95), scale(1));
-    animation-delay:0.45s;
+    animation: fade-up 0.6s ease-out both;
+    animation-delay: 0.45s;
     
 
     .income-card, .expense-card, .balance-card{
